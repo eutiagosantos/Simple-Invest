@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.example.SimpleInvest.dtos.UpdateUserDto;
 import com.example.SimpleInvest.dtos.UserDto;
 import com.example.SimpleInvest.entity.User;
 import com.example.SimpleInvest.repository.UserRepository;
@@ -37,5 +38,28 @@ public class UserService {
 
     public List<User> listUsers() {
         return repository.findAll();
+    }
+
+    public void updateUser(String userId, UpdateUserDto userdto) {
+        var id = UUID.fromString(userId);
+
+        var userExists = repository.findById(id);
+
+        if (userExists.isPresent()) {
+            var user = userExists.get();
+
+            if (userdto.name() != null) {
+                user.setName(userdto.name());
+            }
+
+            if (userdto.password() != null) {
+                user.setPassword(userdto.password());
+            }
+            repository.save(user);
+        }
+    }
+
+    public void deleteUser(UUID userid) {
+        repository.deleteById(userid);
     }
 }
