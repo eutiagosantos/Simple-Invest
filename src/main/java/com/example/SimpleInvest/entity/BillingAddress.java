@@ -36,10 +36,11 @@ public class BillingAddress {
     public BillingAddress() {
     }
 
-    public BillingAddress(UUID billingId, String street, int number) {
+    public BillingAddress(UUID billingId, String street, int number, Account account) {
         this.billingId = billingId;
         this.street = street;
         this.number = number;
+        this.account = account;
     }
 
 }

@@ -7,8 +7,6 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "stock_tb")
 @Getter
@@ -17,9 +15,17 @@ public class Stock {
 
     @Id
     @Column(name = "stock_id")
-    private UUID stockId;
+    private String stockId;
 
     @Column(name = "description")
     private String description;
+
+    public Stock() {
+    }
+
+    public Stock(String stockId, String description) {
+        this.stockId = stockId;
+        this.description = description;
+    }
 
 }
