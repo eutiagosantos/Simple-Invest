@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.SimpleInvest.dtos.AccountResponseDto;
 import com.example.SimpleInvest.dtos.CreateAccontDto;
 import com.example.SimpleInvest.dtos.UpdateUserDto;
 import com.example.SimpleInvest.dtos.UserDto;
@@ -69,6 +70,15 @@ public class UserController {
             @RequestBody CreateAccontDto createAccontDto) {
         userservice.createAccount(userId, createAccontDto);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{userId}/accounts")
+    public ResponseEntity<List<AccountResponseDto>> listUserAccounts(@PathVariable("userId") UUID userId) {
+
+        var accounts = userservice.listAccounts(userId);
+
+        return ResponseEntity.ok(accounts);
+
     }
 
 }

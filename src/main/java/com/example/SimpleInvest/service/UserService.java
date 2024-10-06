@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.example.SimpleInvest.dtos.AccountResponseDto;
 import com.example.SimpleInvest.dtos.CreateAccontDto;
 import com.example.SimpleInvest.dtos.UpdateUserDto;
 import com.example.SimpleInvest.dtos.UserDto;
@@ -43,6 +45,9 @@ public class UserService {
                 userdto.password(),
                 Instant.now(),
                 null);
+        if (repository.findById(entity.getUserId()).isPresent()) {
+            throw new RuntimeException("User already exists");
+        }
 
         return repository.save(entity);
     }
@@ -52,7 +57,10 @@ public class UserService {
     }
 
     public List<User> listUsers() {
-        return repository.findAll();
+        List<User> users = repository.findAll();
+        return users.stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     public void updateUser(String userId, UpdateUserDto userdto) {
@@ -99,5 +107,16 @@ public class UserService {
 
         bAddressRepository.save(billingAddress);
 
+    }
+
+    public List<AccountResponseDto> listAccounts(UUID userId) {
+
+        var user = repository.findById(userId).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+
+        return user.getAccounts()
+                .stream()
+                .map(accountRepository -> new AccountResponseDto(accountRepository.getAccountId(),
+                        accountRepository.getDescription()))
+                .toList();
     }
 }
