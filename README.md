@@ -1,34 +1,35 @@
-Simple Invest
-Simple Invest é uma aplicação backend desenvolvida em Java que ajuda os usuários a monitorar e acompanhar seus investimentos. Utilizando a API da BRAPI, a aplicação permite que os usuários saibam o valor total investido em ações e gerenciem suas contas de investimento de forma eficiente.
+# Simple Invest
 
-⭐ Funcionalidades
-Consulta de ações em tempo real utilizando a API da BRAPI.
-Cálculo do valor total investido com base nas ações do usuário.
-Criação, atualização e exclusão de usuários para o gerenciamento de contas.
-Criação, atualização e exclusão de contas de investimento para um controle personalizado das carteiras de ações.
-🔧 Tecnologias Utilizadas
-Linguagem: Java
-Framework: Spring Boot
-API: BRAPI
-🚀 Instalação e Configuração
-Clone o repositório:
+**Simple Invest** é uma aplicação backend desenvolvida em Java que ajuda os usuários a monitorar e acompanhar seus investimentos. Utilizando a API da BRAPI, a aplicação permite que os usuários saibam o valor total investido em ações e gerenciem suas contas de investimento de forma eficiente.
 
-bash
-Copiar código
-git clone https://github.com/eutiagosantos/Simple-Invest.git
+## ⭐ Funcionalidades
+
+- Consulta de ações em tempo real utilizando a API da BRAPI.
+- Cálculo do valor total investido com base nas ações do usuário.
+- Criação, atualização e exclusão de usuários para o gerenciamento de contas.
+- Criação, atualização e exclusão de contas de investimento para um controle personalizado das carteiras de ações.
+
+## 🔧 Tecnologias Utilizadas
+
+- **Linguagem**: Java
+- **Framework**: Spring Boot
+- **API**: [BRAPI](https://brapi.dev/)
+
+## 🚀 Instalação e Configuração
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/eutiagosantos/Simple-Invest.git
 Importe o projeto na sua IDE favorita (IntelliJ, Eclipse, etc.).
 
 Configure a chave da API BRAPI no arquivo application.properties:
 
-properties
-Copiar código
 brapi.api.key=your_brapi_api_key
 Inicie a aplicação:
 
 Pela IDE, execute a classe principal SimpleInvestApplication.
 Ou via linha de comando:
 bash
-Copiar código
 ./mvnw spring-boot:run
 ⚙️ Como Usar
 Gerencie sua conta de usuário:
