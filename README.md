@@ -31,22 +31,27 @@ Pela IDE, execute a classe principal SimpleInvestApplication.
 Ou via linha de comando:
 bash
 ./mvnw spring-boot:run
-⚙️ Como Usar
-Gerencie sua conta de usuário:
-Use os endpoints para criar, editar ou excluir usuários.
-Gerencie suas contas de investimento:
-Use os endpoints para adicionar, editar ou excluir contas de investimento.
-Consultar ações e calcular investimentos:
-Utilize os endpoints para consultar ações em tempo real e calcular o valor total investido.
-📈 API Utilizada
-BRAPI: API para obtenção de dados financeiros de ações e outros ativos financeiros. Saiba mais aqui.
-🤝 Contribuição
+## ⚙️ Como Usar
+
+1. **Gerencie sua conta de usuário**:
+   - Use os endpoints para criar, editar ou excluir usuários.
+   
+2. **Gerencie suas contas de investimento**:
+   - Use os endpoints para adicionar, editar ou excluir contas de investimento.
+   
+3. **Consultar ações e calcular investimentos**:
+   - Utilize os endpoints para consultar ações em tempo real e calcular o valor total investido.
+
+## 📈 API Utilizada
+
+- **BRAPI**: API para obtenção de dados financeiros de ações e outros ativos financeiros. Saiba mais [aqui](https://brapi.dev/).
+
+## 🤝 Contribuição
+
 Contribuições são muito bem-vindas! Para contribuir, siga os passos:
 
-Faça um fork do projeto.
-Crie uma branch para sua feature (git checkout -b minha-feature).
-Faça commit das suas alterações (git commit -m 'Minha nova feature').
-Envie para a branch (git push origin minha-feature).
-Abra um Pull Request.
-📜 Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+1. Faça um fork do projeto.
+2. Crie uma branch para sua feature (`git checkout -b minha-feature`).
+3. Faça commit das suas alterações (`git commit -m 'Minha nova feature'`).
+4. Envie para a branch (`git push origin minha-feature`).
+5. Abra um Pull Request.
